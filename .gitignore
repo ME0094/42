@@ -1,4 +1,4 @@
-# Secrets and local configuration
+# Secretos y configuración local
 .env
 .env.*
 !.env.example
@@ -9,7 +9,7 @@ credentials*.json
 secrets/
 private/
 
-# C
+# Lenguaje C
 *.o
 *.a
 *.so
@@ -19,7 +19,7 @@ a.out
 .dSYM/
 build/
 
-# Python and tooling
+# Python y herramientas
 __pycache__/
 *.py[cod]
 .venv/
@@ -29,7 +29,7 @@ venv/
 .coverage
 htmlcov/
 
-# Editors and operating systems
+# Editores y sistemas operativos
 .vscode/settings.json
 .idea/
 .DS_Store
@@ -38,7 +38,7 @@ desktop.ini
 *.swp
 *~
 
-# Administrative, evaluated, and personal material
+# Material administrativo, evaluado y personal
 administration/
 grades/
 certificates/
