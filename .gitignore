@@ -1,0 +1,49 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+credentials*.json
+secrets/
+private/
+
+# C
+*.o
+*.a
+*.so
+*.dylib
+*.out
+a.out
+.dSYM/
+build/
+
+# Python and tooling
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editors and operating systems
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+
+# Administrative, evaluated, and personal material
+administration/
+grades/
+certificates/
+submitted-work/
+evaluation/
+*.pdf
+*.doc
+*.docx
