@@ -1,5 +1,5 @@
-# Documentation
+# Documentación
 
-Use this directory for original technical notes, workflow decisions, and project documentation that may be stored under the applicable 42 School rules.
+Este directorio contiene notas técnicas originales, decisiones de trabajo y documentación de proyectos que puedan conservarse de acuerdo con las normas aplicables de 42.
 
-Do not add administrative records, evaluation materials, restricted subject files, credentials, or personal data.
+No se añadirán registros administrativos, materiales de evaluación, enunciados restringidos, credenciales ni datos personales.
