@@ -1,32 +1,32 @@
-# 42 School
+# Escuela 42
 
-Private learning repository for Martín Eliseo's 42 School exercises and original projects.
+Repositorio privado de aprendizaje de Martín Eliseo para ejercicios y proyectos originales de 42.
 
-## Purpose
+## Finalidad
 
-- Track personal progress and technical decisions.
-- Keep exercises and projects organized and reproducible.
-- Separate 42 School work from UoPeople coursework and public portfolio projects.
-- Preserve only material that may be stored according to the applicable school rules.
+- Registrar el progreso personal y las decisiones técnicas.
+- Organizar ejercicios y proyectos de forma reproducible.
+- Separar el trabajo de 42 del material de UoPeople y de los proyectos destinados al portafolio público.
+- Conservar únicamente contenido permitido por las normas aplicables de 42.
 
-## Structure
+## Estructura
 
-- `exercises/`: personal practice and small exercises.
-- `projects/`: original project work, organized by project name.
-- `docs/`: workflow notes and technical documentation.
-- `scripts/`: local development and validation utilities.
+- `exercises/`: prácticas personales y ejercicios breves.
+- `projects/`: proyectos originales organizados por nombre.
+- `docs/`: notas de trabajo y documentación técnica.
+- `scripts/`: utilidades locales de desarrollo y validación.
 
-Directories will be created when they contain their first legitimate file.
+Los directorios se crearán cuando contengan su primer archivo legítimo.
 
-## Security and Academic Integrity
+## Seguridad e integridad académica
 
-1. Do not commit credentials, tokens, SSH keys, environment files, or personal data.
-2. Do not publish evaluation material, restricted subject files, official solutions, or other students' work.
-3. Do not store administrative documents, grades, certificates, or identity documents here.
-4. Review every change before committing and keep the repository private unless publication is explicitly allowed.
-5. AI assistance must comply with the rules applicable to each exercise or project.
-6. Keep UoPeople material in `ME0094/uopeople-cs`; do not duplicate it here.
+1. No guardar credenciales, tokens, claves SSH, archivos de entorno ni datos personales.
+2. No publicar material de evaluación, enunciados restringidos, soluciones oficiales ni trabajos de otras personas.
+3. No almacenar documentos administrativos, calificaciones, certificados ni documentos de identidad.
+4. Revisar cada cambio antes de confirmarlo y mantener el repositorio privado salvo autorización expresa para publicarlo.
+5. El uso de inteligencia artificial deberá respetar las normas aplicables a cada ejercicio o proyecto.
+6. Mantener todo el material de UoPeople en `ME0094/uopeople-cs`, sin duplicarlo aquí.
 
-## Workflow
+## Flujo de trabajo
 
-Use one branch per exercise or project, make small descriptive commits, validate locally, and merge into `main` only after checking for secrets and restricted content.
+Utilizar una rama por ejercicio o proyecto, realizar confirmaciones pequeñas y descriptivas, validar localmente y fusionar en `main` únicamente después de comprobar que no existen secretos ni materiales restringidos.
