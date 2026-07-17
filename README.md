@@ -6,7 +6,6 @@ Repositorio privado de aprendizaje de Martín Eliseo para ejercicios y proyectos
 
 - Registrar el progreso personal y las decisiones técnicas.
 - Organizar ejercicios y proyectos de forma reproducible.
-- Separar el trabajo de 42 del material de UoPeople y de los proyectos destinados al portafolio público.
 - Conservar únicamente contenido permitido por las normas aplicables de 42.
 
 ## Estructura
