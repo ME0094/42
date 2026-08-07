@@ -1,0 +1,2 @@
+#include <stdlib.h>
+char	*ft_itoa_base(int value,int base){char *digits="0123456789ABCDEF";unsigned int n;int neg=value<0&&base==10;int len=1;char *s;if(base<2||base>16)return(0);n=(value<0)?-(unsigned int)value:(unsigned int)value;{unsigned int x=n;while(x>=(unsigned)base){len++;x/=base;}}s=malloc(len+neg+1);if(!s)return(0);s[len+neg]='\0';while(len){s[--len+neg]=digits[n%base];n/=base;}if(neg)s[0]='-';return(s);}

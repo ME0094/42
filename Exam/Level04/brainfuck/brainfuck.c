@@ -1,0 +1,2 @@
+#include <unistd.h>
+int	main(int ac,char **av){unsigned char mem[2048]={0};int p=0;int i=0;int depth;if(ac==2)while(av[1][i]){if(av[1][i]=='>')p++;else if(av[1][i]=='<')p--;else if(av[1][i]=='+')mem[p]++;else if(av[1][i]=='-')mem[p]--;else if(av[1][i]=='.')write(1,&mem[p],1);else if(av[1][i]=='['&&!mem[p]){depth=1;while(depth){i++;if(av[1][i]=='[')depth++;if(av[1][i]==']')depth--;}}else if(av[1][i]==']'&&mem[p]){depth=1;while(depth){i--;if(av[1][i]==']')depth++;if(av[1][i]=='[')depth--;}}i++;}return(0);}

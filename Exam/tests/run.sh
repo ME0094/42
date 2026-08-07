@@ -91,3 +91,15 @@ do
 	cc -Wall -Wextra -Werror -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
 done
 printf 'Level03: all tests passed\n'
+
+compile_programs Level04
+assert_output 4-5-check_mate Success '...K' '....' '....' '...R'
+assert_output brainfuck A '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.'
+assert_output fprime '3*3*5*5' 225
+assert_output rev_wstr 'world hello' 'hello world'
+assert_output rostring 'two three one' ' one  two three '
+find "$root/Level04" -name '*.c' -type f | while IFS= read -r source
+do
+	cc -Wall -Wextra -Werror -I"$(dirname "$source")" -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
+done
+printf 'Level04: all tests passed\n'
