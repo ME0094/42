@@ -5,7 +5,7 @@ original:
 
 - `reference/`: submódulo que apunta a `ayoub0x1/C-Piscine-exam` y conserva su
   procedencia e historial.
-- `solutions/`: implementaciones propias, organizadas por nivel.
+- `Level00/` a `Level05/`: implementaciones propias, organizadas por nivel.
 
 ## Clonado
 
@@ -27,5 +27,5 @@ git submodule update --init --recursive
 git submodule update --remote Exam/reference
 ```
 
-Las soluciones propias deben escribirse desde cero, validarse individualmente
-y respetar las reglas académicas aplicables antes de publicarse.
+Las soluciones propias se escriben desde cero, se validan individualmente con
+`tests/run.sh` y respetan las reglas académicas aplicables.
