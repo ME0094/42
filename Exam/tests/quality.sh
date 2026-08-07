@@ -10,6 +10,7 @@ norminette_bin=${NORMINETTE:-"$HOME/.local/bin/norminette"}
 	Exam/Level03 Exam/Level04 Exam/Level05
 sh Exam/tests/run.sh
 sh Exam/tests/functional.sh
+sh Exam/tests/edge_cases.sh
 sh Exam/tests/memory.sh
 sh Exam/tests/audit.sh
 
