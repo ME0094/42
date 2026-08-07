@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 #include <stdlib.h>
 
-static unsigned int	absolute_value(int value)
+static unsigned int	converted_value(int value, int base)
 {
-	if (value < 0)
+	if (value < 0 && base == 10)
 		return (-(unsigned int)value);
 	return ((unsigned int)value);
 }
@@ -41,7 +41,7 @@ char	*ft_itoa_base(int value, int base)
 	if (base < 2 || base > 16)
 		return (0);
 	neg = value < 0 && base == 10;
-	n = absolute_value(value);
+	n = converted_value(value, base);
 	len = digit_count(n, base);
 	s = malloc(len + neg + 1);
 	if (!s)
