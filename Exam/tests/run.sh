@@ -63,3 +63,16 @@ do
 	cc -Wall -Wextra -Werror -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
 done
 printf 'Level01: all tests passed\n'
+
+compile_programs Level02
+assert_output 2-0-inter bc abc bcd
+assert_output 2-0-last_word world ' hello world  '
+assert_output 2-0-union abcd abc bcd
+assert_output 2-1-alpha_mirror 'zyx CBA' 'abc XYZ'
+assert_output 2-3-wdmatch abc abc axbyc
+assert_output 2-4-do_op 42 40 + 2
+find "$root/Level02" -name '*.c' -type f | while IFS= read -r source
+do
+	cc -Wall -Wextra -Werror -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
+done
+printf 'Level02: all tests passed\n'
