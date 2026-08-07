@@ -2,6 +2,12 @@
 
 Repositorio de aprendizaje de Martín Eliseo para ejercicios y proyectos originales de 42.
 
+Las soluciones de `Exam/Level00` a `Exam/Level05` son implementaciones
+originales con fines educativos. Los enunciados externos permanecen separados
+en el submódulo `Exam/reference`; su código, documentación y autoría no se
+presentan como propios. El código original se distribuye bajo licencia MIT y
+los submódulos conservan sus licencias respectivas.
+
 ## Finalidad
 
 - Registrar el progreso personal y las decisiones técnicas.

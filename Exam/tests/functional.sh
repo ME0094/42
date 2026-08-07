@@ -60,7 +60,7 @@ function_case()
 # Level00 (11)
 program 0-0-aff_a Level00/0-0-aff_a/aff_a.c 'a\n' alphabet
 program 0-0-ft_countdown Level00/0-0-ft_countdown/ft_countdown.c '9876543210\n'
-function_case 0-0-ft_print_numbers TEST_PRINT_NUMBERS Level00/0-0-ft_print_numbers/ft_print_numbers.c '0123456789'
+function_case 0-0-ft_print_numbers TEST_PRINT_NUMBERS Level00/0-0-ft_print_numbers/ft_print_numbers.c '01234567890123456789'
 program 0-0-hello Level00/0-0-hello/hello.c 'Hello World!\n'
 program 0-0-maff_alpha Level00/0-0-maff_alpha/maff_alpha.c 'aBcDeFgHiJkLmNoPqRsTuVwXyZ\n'
 program 0-1-aff_first_param Level00/0-1-aff_first_param/aff_first_param.c 'first\n' first second
@@ -71,7 +71,7 @@ program 0-1-only_z Level00/0-1-only_z/only_z.c 'z'
 program 0-2-aff_z Level00/0-2-aff_z/aff_z.c 'z\n'
 
 # Level01 (13)
-function_case 1-0-ft_strcpy TEST_STRCPY Level01/1-0-ft_strcpy/ft_strcpy.c 'Piscine'
+function_case 1-0-ft_strcpy TEST_STRCPY Level01/1-0-ft_strcpy/ft_strcpy.c 'Piscine,'
 function_case 1-0-ft_strlen TEST_STRLEN Level01/1-0-ft_strlen/ft_strlen.c '7,0'
 program 1-0-repeat_alpha Level01/1-0-repeat_alpha/repeat_alpha.c 'abbccc\n' abc
 program 1-0-search_and_replace Level01/1-0-search_and_replace/search_and_replace.c 'bonono\n' banana a o
@@ -87,17 +87,17 @@ program 1-4-rotone Level01/1-4-rotone/rotone.c 'Bcd YZA\n' 'Abc XYZ'
 
 # Level02 (15)
 function_case 2-0-ft_atoi TEST_ATOI Level02/2-0-ft_atoi/ft_atoi.c '-42,-214,0'
-function_case 2-0-ft_strdup TEST_STRDUP Level02/2-0-ft_strdup/ft_strdup.c 'copy me'
+function_case 2-0-ft_strdup TEST_STRDUP Level02/2-0-ft_strdup/ft_strdup.c 'copy me,'
 program 2-0-inter Level02/2-0-inter/inter.c 'bc\n' abc bcd
 program 2-0-last_word Level02/2-0-last_word/last_word.c 'world\n' ' hello world  '
-function_case 2-0-reverse_bits TEST_REVERSE_BITS Level02/2-0-reverse_bits/reverse_bits.c '72'
-function_case 2-0-swap_bits TEST_SWAP_BITS Level02/2-0-swap_bits/swap_bits.c '20'
+function_case 2-0-reverse_bits TEST_REVERSE_BITS Level02/2-0-reverse_bits/reverse_bits.c '72,0,255'
+function_case 2-0-swap_bits TEST_SWAP_BITS Level02/2-0-swap_bits/swap_bits.c '20,0,255'
 program 2-0-union Level02/2-0-union/union.c 'abcd\n' abc bcd
 program 2-1-alpha_mirror Level02/2-1-alpha_mirror/alpha_mirror.c 'zyx CBA\n' 'abc XYZ'
 function_case 2-1-max TEST_MAX Level02/2-1-max/max.c '-2,0'
 program 2-3-wdmatch Level02/2-3-wdmatch/wdmatch.c 'abc\n' abc axbyc
 program 2-4-do_op Level02/2-4-do_op/do_op.c '42\n' 40 + 2
-function_case 2-4-print_bits TEST_PRINT_BITS Level02/2-4-print_bits/print_bits.c '00101010'
+function_case 2-4-print_bits TEST_PRINT_BITS Level02/2-4-print_bits/print_bits.c '00101010,00000000'
 function_case 2-5-ft_strcmp TEST_STRCMP Level02/2-5-ft_strcmp/ft_strcmp.c '0,1,1'
 function_case 2-5-ft_strrev TEST_STRREV Level02/2-5-ft_strrev/ft_strrev.c 'edcba,'
 function_case 2.6-is_power_of_2 TEST_POWER2 Level02/2.6-is_power_of_2/is_power_of_2.c '1,1,0'
@@ -106,7 +106,7 @@ function_case 2.6-is_power_of_2 TEST_POWER2 Level02/2.6-is_power_of_2/is_power_o
 program 3-0-add_prime_sum Level03/3-0-add_prime_sum/add_prime_sum.c '17\n' 7
 program 3-0-epur_str Level03/3-0-epur_str/epur_str.c 'hello world\n' '  hello   world  '
 function_case 3-0-ft_list_size TEST_LIST_SIZE Level03/3-0-ft_list_size/ft_list_size.c '3,0'
-function_case 3-0-ft_rrange TEST_RRANGE Level03/3-0-ft_rrange/ft_rrange.c '-2,-1,0,1'
+function_case 3-0-ft_rrange TEST_RRANGE Level03/3-0-ft_rrange/ft_rrange.c '-2,-1,0,1,7'
 program 3-0-hidenp Level03/3-0-hidenp/hidenp.c '1\n' abc axbyc
 program 3-0-pgcd Level03/3-0-pgcd/pgcd.c '6\n' 18 24
 program 3-0-print_hex Level03/3-0-print_hex/print_hex.c '2a\n' 42
@@ -120,16 +120,16 @@ program 3-4-paramsum Level03/3-4-paramsum/paramsum.c '3\n' a b c
 program 3-4-str_capitalizer Level03/3-4-str_capitalizer/str_capitalizer.c 'Hello World\n' 'hELLO wORLD'
 
 # Level04 (13)
-function_case 4-2-ft_list_remove_if TEST_REMOVE_IF Level04/4-2-ft_list_remove_if/ft_list_remove_if.c 'keep'
-function_case 4-3-sort_list TEST_SORT_LIST Level04/4-3-sort_list/sort_list.c '123'
+function_case 4-2-ft_list_remove_if TEST_REMOVE_IF Level04/4-2-ft_list_remove_if/ft_list_remove_if.c 'keep,1'
+function_case 4-3-sort_list TEST_SORT_LIST Level04/4-3-sort_list/sort_list.c '123,1'
 function_case 4-4-ft_itoa TEST_ITOA Level04/4-4-ft_itoa/ft_itoa.c '-2147483648,0'
 program 4-5-check_mate Level04/4-5-check_mate/check_mate.c 'Success\n' '...K' '....' '....' '...R'
 function_case 5-2-ft_itoa_base TEST_ITOA_BASE Level04/5-2-ft_itoa_base/ft_itoa_base.c 'FFFFFFD6,101010'
 program brainfuck Level04/brainfuck/brainfuck.c 'A' '+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++.'
-function_case flood_fill TEST_FLOOD_FILL Level04/flood_fill/flood_fill.c 'FFF0/F000/FFF0'
+function_case flood_fill TEST_FLOOD_FILL Level04/flood_fill/flood_fill.c 'FFF0/F000/FFF0,F'
 program fprime Level04/fprime/fprime.c '3*3*5*5\n' 225
 function_case ft_list_foreach TEST_LIST_FOREACH Level04/ft_list_foreach/ft_list_foreach.c '2,5'
-function_case ft_split TEST_SPLIT Level04/ft_split/ft_split.c 'one,two,three'
+function_case ft_split TEST_SPLIT Level04/ft_split/ft_split.c 'one,two,three,1'
 program rev_wstr Level04/rev_wstr/rev_wstr.c 'world hello\n' 'hello world'
 program rostring Level04/rostring/rostring.c 'two three one\n' ' one  two three '
 function_case sort_int_tab TEST_SORT_INT Level04/sort_int_tab/sort_int_tab.c '-1,0,3,3'

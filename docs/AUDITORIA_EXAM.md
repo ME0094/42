@@ -15,6 +15,12 @@ de salida para cada uno de los 73 ejercicios. `functional.sh` ejecuta esa
 matriz con comparación byte a byte, incluidas las diferencias de espacios y
 saltos de línea, y rechaza cualquier ejercicio ausente o duplicado.
 
+La capa adicional `edge_cases.sh` ejecuta un segundo escenario para los 44
+programas (argumentos ausentes o adicionales, cadenas vacías, entradas
+inválidas y valores frontera). Los 29 ejercicios que exportan funciones prueban
+al menos dos escenarios en `functional_harness.c`, incluyendo entradas vacías,
+nulas, rangos degenerados, ceros, límites de bits y estructuras enlazadas.
+
 La prueba de memoria ejecuta con Valgrind todas las funciones que reservan o
 liberan memoria, todos los programas compilables sin argumentos y casos
 funcionales representativos con entrada.

@@ -1,0 +1,41 @@
+name: Exam quality
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  quality-64-bit:
+    name: Quality gate (Linux 64-bit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install Norminette and Valgrind
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes valgrind
+          python3 -m pip install --user norminette
+      - name: Run complete quality gate
+        env:
+          NORMINETTE: /home/runner/.local/bin/norminette
+        run: sh Exam/tests/quality.sh
+
+  compile-32-bit:
+    name: Compile (Linux 32-bit)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Install multilib toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes gcc-multilib libc6-dev-i386
+      - name: Compile all solutions for 32 and 64 bits
+        run: sh Exam/tests/architectures.sh
