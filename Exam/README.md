@@ -29,3 +29,10 @@ git submodule update --remote Exam/reference
 
 Las soluciones propias se escriben desde cero, se validan individualmente con
 `tests/run.sh` y respetan las reglas académicas aplicables.
+
+## Uso pedagógico
+
+Antes de consultar una solución, realiza un intento propio, define casos límite
+y conserva una explicación del bloqueo. Después de comparar enfoques, cierra la
+referencia y reescribe la solución desde cero. Consulta el
+[plan pedagógico](../docs/PLAN_PEDAGOGICO.md) para seguir el itinerario completo.
