@@ -30,6 +30,25 @@ git submodule update --remote Exam/reference
 Las soluciones propias se escriben desde cero, se validan individualmente con
 `tests/run.sh` y respetan las reglas académicas aplicables.
 
+## Puertas de calidad
+
+Desde WSL se pueden reproducir las tres comprobaciones principales:
+
+```sh
+sh Exam/tests/run.sh
+sh Exam/tests/memory.sh
+sh Exam/tests/audit.sh
+sh Exam/tests/quality.sh
+```
+
+La auditoría comprueba los 73 ejercicios contra sus enunciados: archivos
+esperados, compilación estricta, Norminette y símbolos externos permitidos.
+La prueba de memoria ejecuta Valgrind sobre todas las funciones que reservan o
+liberan memoria, todos los programas y casos representativos con entrada.
+
+Los criterios completos están documentados en la
+[auditoría de calidad](../docs/AUDITORIA_EXAM.md).
+
 ## Uso pedagógico
 
 Antes de consultar una solución, realiza un intento propio, define casos límite

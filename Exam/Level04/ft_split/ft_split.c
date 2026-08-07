@@ -51,14 +51,6 @@ static char	*copy_word(char *str, int length)
 	return (word);
 }
 
-static char	**free_words(char **out, int count)
-{
-	while (count > 0)
-		free(out[--count]);
-	free(out);
-	return (0);
-}
-
 char	**ft_split(char *s)
 {
 	char	**out;
@@ -80,7 +72,7 @@ char	**ft_split(char *s)
 			len++;
 		out[i] = copy_word(s, len);
 		if (!out[i])
-			return (free_words(out, i));
+			return (0);
 		i++;
 		s += len;
 	}
