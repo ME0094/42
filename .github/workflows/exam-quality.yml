@@ -13,7 +13,7 @@ jobs:
     name: Quality gate (Linux 64-bit)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Install Norminette and Valgrind
@@ -30,7 +30,7 @@ jobs:
     name: Compile (Linux 32-bit)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
       - name: Install multilib toolchain
