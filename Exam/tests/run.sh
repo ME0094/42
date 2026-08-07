@@ -103,3 +103,17 @@ do
 	cc -Wall -Wextra -Werror -I"$(dirname "$source")" -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
 done
 printf 'Level04: all tests passed\n'
+
+compile_programs Level05
+assert_output 5-3-brackets OK '{a[(b)]}'
+assert_output 5-3-brackets Error '([)]'
+assert_output 5-4-rpn_calc 10 '1 2 * 3 * 4 +'
+assert_output 5-4-rpn_calc Error '1 2 3 +'
+assert_output 5-5-options '00000000 00000000 00000111 00000111' -abc -ijk
+assert_output biggest_pal abcba abcba
+assert_output biggest_pal aba abacdfgdcaba
+find "$root/Level05" -name '*.c' -type f | while IFS= read -r source
+do
+	cc -Wall -Wextra -Werror -I"$(dirname "$source")" -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
+done
+printf 'Level05: all tests passed\n'
