@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   btree_level_count.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: molasz-a <molasz-a@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/04 16:50:59 by molasz-a          #+#    #+#             */
+/*   Updated: 2024/01/04 16:51:03 by molasz-a         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_btree.h"
+
+int	btree_level_count(t_btree *root)
+{
+	int	right;
+	int	left;
+
+	if (root == 0)
+		return (0);
+	right = btree_level_count(root->right);
+	left = btree_level_count(root->left);
+	if (right > left)
+		return (right + 1);
+	return (left + 1);
+}
