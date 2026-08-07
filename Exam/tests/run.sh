@@ -48,3 +48,18 @@ assert_output 0-1-only_z z
 assert_output 0-2-aff_z z
 cc -Wall -Wextra -Werror -c "$root/Level00/0-0-ft_print_numbers/ft_print_numbers.c" -o "$build/ft_print_numbers.o"
 printf 'Level00: all tests passed\n'
+
+compile_programs Level01
+assert_output 1-0-repeat_alpha abbccc abc
+assert_output 1-0-search_and_replace bonono banana a o
+assert_output 1-0-ulstr 'hELLO 42' 'Hello 42'
+assert_output 1-1-rot_13 Uryyb Hello
+assert_output 1-2-first_word hello '  hello world'
+assert_output 1-3-first_word hello '  hello world'
+assert_output 1-3-rev_print dcba abcd
+assert_output 1-4-rotone 'Bcd YZA' 'Abc XYZ'
+find "$root/Level01" -name '*.c' -type f | while IFS= read -r source
+do
+	cc -Wall -Wextra -Werror -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
+done
+printf 'Level01: all tests passed\n'
