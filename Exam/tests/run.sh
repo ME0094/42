@@ -76,3 +76,18 @@ do
 	cc -Wall -Wextra -Werror -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
 done
 printf 'Level02: all tests passed\n'
+
+compile_programs Level03
+assert_output 3-0-add_prime_sum 17 7
+assert_output 3-0-epur_str 'hello world' '  hello   world  '
+assert_output 3-0-hidenp 1 abc axbyc
+assert_output 3-0-pgcd 6 18 24
+assert_output 3-0-print_hex 2a 42
+assert_output 3-1-expand_str 'hello   world' ' hello world '
+assert_output 3-4-paramsum 3 a b c
+assert_output 3-4-str_capitalizer 'Hello World' 'hELLO wORLD'
+find "$root/Level03" -name '*.c' -type f | while IFS= read -r source
+do
+	cc -Wall -Wextra -Werror -c "$source" -o "$build/$(basename "$(dirname "$source")").o"
+done
+printf 'Level03: all tests passed\n'
