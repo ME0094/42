@@ -10,6 +10,7 @@ Repositorio privado de aprendizaje de Martín Eliseo para ejercicios y proyectos
 
 ## Estructura
 
+- `Exam/`: referencia externa enlazada como submódulo y soluciones originales separadas por nivel.
 - `exercises/`: prácticas personales y ejercicios breves.
 - `projects/`: proyectos originales organizados por nombre.
 - `docs/`: notas de trabajo y documentación técnica.
