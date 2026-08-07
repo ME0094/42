@@ -24,7 +24,7 @@ Los directorios se crearán cuando contengan su primer archivo legítimo.
 3. No almacenar documentos administrativos, calificaciones, certificados ni documentos de identidad.
 4. Revisar cada cambio antes de confirmarlo y mantener el repositorio privado salvo autorización expresa para publicarlo.
 5. El uso de inteligencia artificial deberá respetar las normas aplicables a cada ejercicio o proyecto.
-6. Mantener todo el material de UoPeople en `ME0094/uopeople-cs`, sin duplicarlo aquí.
+
 
 ## Flujo de trabajo
 
