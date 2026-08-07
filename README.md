@@ -1,6 +1,6 @@
 # Escuela 42
 
-Repositorio privado de aprendizaje de Martín Eliseo para ejercicios y proyectos originales de 42.
+Repositorio de aprendizaje de Martín Eliseo para ejercicios y proyectos originales de 42.
 
 ## Finalidad
 
