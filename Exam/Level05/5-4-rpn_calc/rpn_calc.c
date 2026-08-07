@@ -1,4 +1,109 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rpn_calc.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: martirod <martirod@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/07 00:00:00 by martirod          #+#    #+#             */
+/*   Updated: 2026/08/07 00:00:00 by martirod         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include <stdio.h>
-#include <stdlib.h>
-static int	number(char *s,int *i,int *value){int start=*i;int sign=1;long n=0;if(s[*i]=='-'&&s[*i+1]>='0'&&s[*i+1]<='9'){sign=-1;(*i)++;}while(s[*i]>='0'&&s[*i]<='9'){n=n*10+s[*i]-'0';(*i)++;}if(*i==start||(*i==start+1&&sign<0))return(0);*value=(int)(n*sign);return(1);}
-int	main(int ac,char **av){int st[4096];int top=0;int i=0;int a,b,v;if(ac!=2){printf("Error\n");return(0);}while(av[1][i]){while(av[1][i]==' ')i++;if(!av[1][i])break;if((av[1][i]>='0'&&av[1][i]<='9')||(av[1][i]=='-'&&av[1][i+1]>='0'&&av[1][i+1]<='9')){if(!number(av[1],&i,&v)||top==4096||(av[1][i]&&av[1][i]!=' ')){printf("Error\n");return(0);}st[top++]=v;}else{if(top<2||(av[1][i+1]&&av[1][i+1]!=' ')){printf("Error\n");return(0);}b=st[--top];a=st[--top];if(av[1][i]=='+')v=a+b;else if(av[1][i]=='-')v=a-b;else if(av[1][i]=='*')v=a*b;else if(av[1][i]=='/'&&b)v=a/b;else if(av[1][i]=='%'&&b)v=a%b;else{printf("Error\n");return(0);}st[top++]=v;i++;}}if(top!=1)printf("Error\n");else printf("%d\n",st[0]);return(0);}
+
+static int	read_number(char *str, int *index, int *value)
+{
+	int				sign;
+	unsigned int	number;
+
+	sign = 1;
+	number = 0;
+	if (str[*index] == '-')
+	{
+		sign = -1;
+		(*index)++;
+	}
+	if (str[*index] < '0' || str[*index] > '9')
+		return (0);
+	while (str[*index] >= '0' && str[*index] <= '9')
+	{
+		number = number * 10 + str[*index] - '0';
+		(*index)++;
+	}
+	*value = (int)number * sign;
+	return (1);
+}
+
+static int	apply_operator(int *stack, int *top, char op)
+{
+	int	left;
+	int	right;
+	int	value;
+
+	if (*top < 2)
+		return (0);
+	right = stack[--(*top)];
+	left = stack[--(*top)];
+	if (op == '+')
+		value = left + right;
+	else if (op == '-')
+		value = left - right;
+	else if (op == '*')
+		value = left * right;
+	else if (op == '/' && right)
+		value = left / right;
+	else if (op == '%' && right)
+		value = left % right;
+	else
+		return (0);
+	stack[(*top)++] = value;
+	return (1);
+}
+
+static int	read_token(char *str, int *index, int *stack, int *top)
+{
+	int	value;
+
+	if ((str[*index] >= '0' && str[*index] <= '9') || (str[*index] == '-'
+			&& str[*index + 1] >= '0' && str[*index + 1] <= '9'))
+	{
+		if (*top == 4096 || !read_number(str, index, &value))
+			return (0);
+		if (str[*index] && str[*index] != ' ')
+			return (0);
+		stack[(*top)++] = value;
+		return (1);
+	}
+	if (str[*index + 1] && str[*index + 1] != ' ')
+		return (0);
+	if (!apply_operator(stack, top, str[*index]))
+		return (0);
+	(*index)++;
+	return (1);
+}
+
+int	main(int ac, char **av)
+{
+	int	stack[4096];
+	int	top;
+	int	index;
+
+	top = 0;
+	index = 0;
+	if (ac != 2)
+		return (printf("Error\n"), 0);
+	while (av[1][index])
+	{
+		while (av[1][index] == ' ')
+			index++;
+		if (!av[1][index])
+			break ;
+		if (!read_token(av[1], &index, stack, &top))
+			return (printf("Error\n"), 0);
+	}
+	if (top != 1)
+		printf("Error\n");
+	else
+		printf("%d\n", stack[0]);
+	return (0);
+}

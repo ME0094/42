@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first_word.c                                       :+:      :+:    :+:   */
+/*   check_mate.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: martirod <martirod@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -9,20 +9,20 @@
 /*   Updated: 2026/08/07 00:00:00 by martirod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
+#ifndef CHECK_MATE_H
+# define CHECK_MATE_H
 
-int	main(int argc, char **argv)
+typedef struct s_point
 {
-	int	i;
+	int		r;
+	int		c;
+}			t_point;
 
-	if (argc == 2)
-	{
-		i = 0;
-		while (argv[1][i] == ' ' || argv[1][i] == '\t')
-			i++;
-		while (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\t')
-			write(1, &argv[1][i++], 1);
-	}
-	write(1, "\n", 1);
-	return (0);
-}
+typedef struct s_board
+{
+	char	**cells;
+	int		rows;
+	t_point	king;
+}			t_board;
+
+#endif
