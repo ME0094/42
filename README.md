@@ -37,7 +37,15 @@ Los directorios se crearán cuando contengan su primer archivo legítimo.
 2. No publicar material de evaluación, enunciados restringidos, soluciones oficiales ni trabajos de otras personas.
 3. No almacenar documentos administrativos, calificaciones, certificados ni documentos de identidad.
 4. Revisar cada cambio antes de publicarlo y asumir que cualquier dato confirmado en `main` será accesible públicamente.
-5. El uso de inteligencia artificial deberá respetar las normas aplicables a cada ejercicio o proyecto.
+5. El uso de inteligencia artificial se limita a:
+   - explicar conceptos, sintaxis o mensajes de error;
+   - revisar código ya escrito para detectar errores o sugerir mejoras de estilo;
+   - guiar la depuración mediante preguntas, sin proporcionar la solución directa.
+
+   No se permite generar soluciones completas o parciales de ejercicios evaluables
+   ni copiar código generado sin entenderlo línea por línea. Cualquier uso de IA se
+   ajusta además a las normas específicas de 42 para cada proyecto, que pueden ser
+   más restrictivas que esta política general.
 
 
 ## Flujo de trabajo
