@@ -1,59 +1,57 @@
-# Escuela 42
+# 42 Málaga — C and Systems Programming
 
-Repositorio de aprendizaje de Martín Eliseo para ejercicios y proyectos originales de 42.
+An evidence-based learning portfolio of original exercises and projects completed while studying at 42 Málaga. The repository documents progression from C fundamentals to memory management, data structures, Unix interfaces, build tooling, and systematic testing.
 
-Las soluciones de `Exam/Level00` a `Exam/Level05` son implementaciones
-originales con fines educativos. Los enunciados externos permanecen separados
-en el submódulo `Exam/reference`; su código, documentación y autoría no se
-presentan como propios. El código original se distribuye bajo licencia MIT y
-los submódulos conservan sus licencias respectivas.
+## Progress map
 
-## Finalidad
+| Area | Evidence | Concepts demonstrated | Status |
+| --- | --- | --- | --- |
+| C foundations | [`C03`–`C06`](C03) | Strings, numeric conversion, program arguments, and control flow | Complete |
+| Dynamic memory | [`C07`](C07) | Allocation, ranges, string composition, and base conversion | Complete |
+| Headers and structures | [`C08`](C08) | Macros, headers, structures, and modular interfaces | Complete |
+| Libraries and build systems | [`C09`](C09) | Static libraries, Makefiles, and reusable utilities | Complete |
+| Unix file I/O | [`C10`](C10) | File descriptors, `cat`, `tail`, and hexadecimal output | Complete |
+| Linked data structures | [`C12`](C12) | List traversal, mutation, sorting, and ownership | Complete |
+| Team algorithm project | [`Rush01`](Rush01/ex00) | Input validation, constraint solving, decomposition, and collaboration | Complete |
+| Timed practice | [`Exam`](Exam) | Algorithms, defensive C, test harnesses, and memory checks | In progress |
 
-- Registrar el progreso personal y las decisiones técnicas.
-- Organizar ejercicios y proyectos de forma reproducible.
-- Conservar únicamente contenido permitido por las normas aplicables de 42.
+Directories are added only when they contain legitimate work, so the repository itself remains the source of truth for progress.
 
-## Ruta de aprendizaje
+## How the work is validated
 
-El [plan pedagógico](docs/PLAN_PEDAGOGICO.md) propone un itinerario de 12 semanas,
-un ciclo de trabajo por ejercicio, repaso espaciado, simulaciones y una rúbrica
-de dominio. Las soluciones públicas deben consultarse únicamente después de un
-intento propio documentado.
+The exam-practice suite provides functional, edge-case, architecture, quality, and memory checks:
 
-## Estructura
+```bash
+git clone --recurse-submodules https://github.com/ME0094/42.git
+cd 42
+bash Exam/tests/run.sh
+```
 
-- `Exam/`: referencia externa enlazada como submódulo y soluciones originales separadas por nivel.
-- `exercises/`: prácticas personales y ejercicios breves.
-- `projects/`: proyectos originales organizados por nombre.
-- `docs/`: notas de trabajo y documentación técnica.
-- `scripts/`: utilidades locales de desarrollo y validación.
+Individual projects include their own build or validation notes. For example, the Rush01 solver can be compiled with strict warnings:
 
-Los directorios se crearán cuando contengan su primer archivo legítimo.
+```bash
+cc -Wall -Wextra -Werror Rush01/ex00/*.c -o rush01
+./rush01 "4 3 2 1 1 2 2 2 4 3 2 1 1 2 2 2"
+```
 
-## Seguridad e integridad académica
+## Engineering approach
 
-1. No guardar credenciales, tokens, claves SSH, archivos de entorno ni datos personales.
-2. No publicar material de evaluación, enunciados restringidos, soluciones oficiales ni trabajos de otras personas.
-3. No almacenar documentos administrativos, calificaciones, certificados ni documentos de identidad.
-4. Revisar cada cambio antes de publicarlo y asumir que cualquier dato confirmado en `main` será accesible públicamente.
-5. El uso de inteligencia artificial se limita a:
-   - explicar conceptos, sintaxis o mensajes de error;
-   - revisar código ya escrito para detectar errores o sugerir mejoras de estilo;
-   - guiar la depuración mediante preguntas, sin proporcionar la solución directa.
+- Prefer small functions with explicit ownership and error behavior.
+- Compile with strict warnings and test boundary conditions.
+- Use Valgrind or sanitizers when dynamic memory is involved.
+- Keep third-party references separate from original implementation.
+- Record reasoning and validation, not only final answers.
 
-   No se permite generar soluciones completas o parciales de ejercicios evaluables
-   ni copiar código generado sin entenderlo línea por línea. Cualquier uso de IA se
-   ajusta además a las normas específicas de 42 para cada proyecto, que pueden ser
-   más restrictivas que esta política general.
+Supporting material lives in [`docs/`](docs), including the learning plan and audit notes. Larger projects are indexed under [`projects/`](projects).
 
+## Academic integrity and provenance
 
-## Flujo de trabajo
+All solution code in this repository is original educational work. External prompts and reference material remain separated in the `Exam/reference` submodule and retain their original authorship and licenses. Nothing here is presented as official 42 material.
 
-Utilizar una rama por ejercicio o proyecto, realizar confirmaciones pequeñas y descriptivas, validar localmente y fusionar en `main` únicamente después de comprobar que no existen secretos ni materiales restringidos.
+Public solutions should be consulted only after making and documenting an independent attempt. Restricted assessments, official solutions, credentials, grades, identity documents, and other students' work must never be committed.
 
-## Aviso
+AI may be used to explain concepts, interpret compiler errors, review code already written, or guide debugging through questions. It must not generate answers for assessed exercises, and every use remains subject to the stricter rules of the relevant 42 project.
 
-Este repositorio es un recurso personal y comunitario de aprendizaje. No es un
-repositorio oficial de 42 ni garantiza la aceptación de una solución en una
-evaluación concreta.
+## License
+
+Original code is available under the [MIT License](LICENSE). Submodules and external references retain their respective licenses.
